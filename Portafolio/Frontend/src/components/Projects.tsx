@@ -16,7 +16,7 @@ const projects = [
   {
     title: "E-commerce",
     description:
-      "Ecommerce (en construcción) con arquitectura de microservicios en .NET Core.",
+      "Ecommerce (en construcción) con arquitectura de microservicios en .NET Core, API´s.",
     img: "/img/projects/ecommerce.png",
   },
   {
@@ -36,12 +36,6 @@ const projects = [
     description:
       "Sitio web corporativo para muebleria artesanal con catálogo de productos y contactos.",
     img: "/img/projects/muebleria.png",
-  },
-    {
-    title: "Tetris",
-    description:
-      "Clasico juego de Tetris desarrollado con React y TypeScript. Incluye niveles y sistema puntajes.",
-    img: "/img/projects/tetris.png",
   },
 ];
 
