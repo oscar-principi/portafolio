@@ -101,7 +101,7 @@ export default function ChatSobreMi() {
     className="p-2 bg-zinc-200 rounded-t-lg cursor-move font-bold text-center select-none flex justify-between items-center"
     onMouseDown={handleMouseDown}
   >
-    <span>Chatea conmigo y conoceme</span>
+    <span>Chatea conmigo y conoceme!</span>
     <button
       className="text-xl font-bold px-2 hover:bg-zinc-300 rounded"
       onClick={(e) => {

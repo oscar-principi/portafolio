@@ -3,22 +3,22 @@ export default function Contact() {
     {
       href: "https://www.linkedin.com/in/oscar-principi",
       alt: "LinkedIn",
-      img: "/img/contacts/linkedin.png",
+      img: "img/contacts/linkedin.png",
     },
     {
       href: "https://github.com/oscar-principi",
       alt: "GitHub",
-      img: "/img/contacts/git.png",
+      img: "img/contacts/git.png",
     },
     {
       href: "https://api.whatsapp.com/send?phone=2213043135",
       alt: "WhatsApp",
-      img: "/img/contacts/whatsapp.png",
+      img: "img/contacts/whatsapp.png",
     },
     {
       href: "https://www.instagram.com/oscar.principi",
       alt: "Instagram",
-      img: "/img/contacts/instagram.png",
+      img: "img/contacts/instagram.png",
     },
   ];
 

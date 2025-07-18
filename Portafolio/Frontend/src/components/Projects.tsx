@@ -4,38 +4,38 @@ const projects = [
   {
     title: "Portafolio Personal",
     description:
-      "Sitio web creado con React y Vite, usando TypeScript y Tailwind. Diseño responsive.",
-    img: "/img/projects/portafolio.png",
+      "Sitio web creado con React y Vite, usando TypeScript y Tailwind. Diseño responsivo.",
+    img: "img/projects/portafolio.png",
   },
   {
     title: "Home Banking",
     description:
       "Aplicación Fulltack con Java, JSP, Servlets, JDBC, Tomcat y Bootstrap. Gestión de clientes, cuentas, transferencias y de administradores, seguridad RBAC.",
-    img: "/img/projects/home-banking.png",
+    img: "img/projects/home-banking.png",
   },
   {
     title: "E-commerce",
     description:
-      "Ecommerce (en construcción) con arquitectura de microservicios en .NET Core, API´s.",
-    img: "/img/projects/ecommerce.png",
+      "Ecommerce (en construcción) con arquitectura de microservicios en .NET Core, API´s + Ocelot, JWT, Identity, Entity.",
+    img: "img/projects/ecommerce.png",
   },
   {
     title: "Sistema de Gestión Médica",
     description:
       "Aplicacion Fullstack con .NET Framework. Gestion de pacientes y administradores, con reportes y seguridad RBAC.",
-    img: "/img/projects/gestion-medica.png",
+    img: "img/projects/gestion-medica.png",
   },
   {
     title: "Sistema de Gestión Veterinaria",
     description:
       "Aplicación de consola con C++ y Rlutil. Gestión de pacientes, veterinarios, mascotas, y reportes.",
-    img: "/img/projects/gestion-veterinaria.png",
+    img: "img/projects/gestion-veterinaria.png",
   },
   {
     title: "Muebleria",
     description:
-      "Sitio web corporativo para muebleria artesanal con catálogo de productos y contactos.",
-    img: "/img/projects/muebleria.png",
+      "Sitio web para muebleria en HTML y CSS, responsiva con vista de productos y contactos.",
+    img: "img/projects/muebleria.png",
   },
 ];
 
@@ -53,9 +53,8 @@ const projects = [
         id="projects"
         className="flex flex-col items-center justify-center bg-zinc-100 text-zinc-700 px-1 py-20 w-full"
       >
-        <h2 className="text-4xl font-bold text-zinc-800"></h2>
   
-        <div className="relative w-full max-w-5xl overflow-hidden">
+        <div className="relative w-full max-w-3xl overflow-hidden">
           <div
             className="flex transition-transform duration-500 ease-in-out"
             style={{ transform: `translateX(-${current * 100}%)` }}
@@ -63,13 +62,13 @@ const projects = [
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="min-w-full flex flex-col items-center justify-center p-5"
+                className="min-w-full flex flex-col items-center justify-center p-2"
               >
-                <div className="bg-white p-15 rounded-xl shadow-md w-full max-w-3xl text-center">
-                  <h3 className="text-2xl font-semibold text-zinc-900 mb-4">
+                <div className="bg-white pt-7 rounded-xl shadow-md w-full max-w-3xl text-center">
+                  <h3 className="text-2xl font-semibold text-zinc-900 mb-3">
                     {project.title}
                   </h3>
-                  <div className="flip-card mx-auto mb-6 rounded-md max-h-90 w-72 h-72 perspective">
+                  <div className="flip-card mx-auto mb-60 rounded-md max-h-45 w-10 h-10 perspective">
                     <div className="flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-preserve-3d">
                       <img
                         src={project.img}

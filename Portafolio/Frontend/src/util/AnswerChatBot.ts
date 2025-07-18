@@ -21,7 +21,7 @@ export const botResponses: BotResponse[] = [
     answer: "Tengo experiencia academica y personal en desarrollo de aplicaciones con Blazor y React en frontend, .NET y Java en backend, y bases de datos SQL. Sigo aprendiendo para mejorar como desarrollador fullstack y construir soluciones completas ue generen un impacto positivo en la sociedad.",
 },
   {
-    keywords: ["formación", "estudios", "tecnicatura", "educación"],
+    keywords: ["formacion", "estudios", "tecnicatura", "educacion"],
     answer: "Estoy terminando la Tecnicatura en Programacion en la UTN. Aprendí sobre programación fullstack en aplicaciones web y de escritorio.",
   },
   {
