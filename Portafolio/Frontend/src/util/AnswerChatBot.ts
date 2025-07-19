@@ -6,7 +6,7 @@ type BotResponse = {
 export const botResponses: BotResponse[] = [
   {
     keywords: ["hola", "buenas"],
-    answer: "¡Hola! Soy el bot que te ayuda a conocerme mejor. ¿Querés saber sobre mi perfil profesional o personal, experiencia, formación, tecnologías, metas o redes?",
+    answer: "🤖 Hola! Soy Oscar. ¿Querés saber sobre mi perfil profesional o personal, experiencia, formación, tecnologías, metas, redes?",
   },
   {
     keywords: ["profesional", "perfil profesional"],

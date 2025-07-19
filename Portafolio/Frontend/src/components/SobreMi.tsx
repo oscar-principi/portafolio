@@ -63,7 +63,7 @@ export default function ChatSobreMi() {
   // Mensaje automático al abrir el chat
   useEffect(() => {
     if (isOpen && messages.length === 0) {
-      setMessages(["🤖 Hola! Soy Oscar. ¿Querés saber sobre mi perfil profesional o personal, experiencia, formación, tecnologías, meta, redes?"]);
+      setMessages(["🤖 Hola! Soy Oscar. ¿Querés saber sobre mi perfil profesional o personal, experiencia, formación, tecnologías, metas, redes?"]);
     }
   }, [isOpen, messages]);
 
