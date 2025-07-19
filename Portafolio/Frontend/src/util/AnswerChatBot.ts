@@ -26,7 +26,7 @@ export const botResponses: BotResponse[] = [
   },
   {
     keywords: ["tecnologias", "stack", "lenguajes", "herramientas"],
-    answer: "Tengo conocimientos en .NET, Java, Blazor, React, SQL Server, HTML, CSS, Git, Docker y más. Me gusta aprender nuevas tecnologías para mejorar mis habilidades para resolver problemas reales.",
+    answer: "Tengo conocimientos en .NET, Java, Blazor, React, HTML, CSS, Bootstrap, Taildwind, uso herramientas como Visual Studio Community/Code, Eclipse, SQL Server, MySQL, Git, Docker. Me gusta aprender nuevas tecnologías para mejorar mis habilidades para resolver problemas reales.",
   },
   {
     keywords: ["meta", "metas", "objetivos", "futuro", "vision"],
