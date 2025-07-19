@@ -11,11 +11,6 @@ export default function Contact() {
       img: "img/contacts/git.png",
     },
     {
-      href: "https://api.whatsapp.com/send?phone=2213043135",
-      alt: "WhatsApp",
-      img: "img/contacts/whatsapp.png",
-    },
-    {
       href: "https://www.instagram.com/oscar.principi",
       alt: "Instagram",
       img: "img/contacts/instagram.png",
