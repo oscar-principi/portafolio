@@ -59,7 +59,10 @@ export default function Tech() {
               title={tech.name}
               style={{ userSelect: "none" }} 
             >
-              <span className="mt-2 text-x font-semibold text-center">{tech.name}</span>
+            <span className="mt-2 text-sm font-semibold text-center h-10 flex items-center justify-center text-balance">
+              {tech.name}
+            </span>
+
             </li>
           ))}
 

@@ -6,36 +6,42 @@ const projects = [
     description:
       "Sitio web creado con React y Vite, usando TypeScript y Tailwind. Diseño responsivo.",
     img: "img/projects/portafolio.png",
+    github: "https://github.com/oscar-principi/portafolio.git",
   },
   {
     title: "Home Banking",
     description:
       "Aplicación Fulltack con Java, JSP, Servlets, JDBC, Tomcat y Bootstrap. Gestión de clientes, cuentas, transferencias y de administradores, seguridad RBAC.",
     img: "img/projects/home-banking.png",
+    github:"https://github.com/user52689/LAB-IV.git",
   },
   {
     title: "E-commerce",
     description:
       "Ecommerce (en construcción) con arquitectura de microservicios en .NET Core, API´s + Ocelot, JWT, Identity, Entity.",
     img: "img/projects/ecommerce.png",
+    github:"https://github.com/oscar-principi/EcommerceExpress.git",
   },
   {
     title: "Sistema de Gestión Médica",
     description:
       "Aplicacion Fullstack con .NET Framework. Gestion de pacientes y administradores, con reportes y seguridad RBAC.",
     img: "img/projects/gestion-medica.png",
+    github:"https://github.com/user52689/PROG-III.git",
   },
   {
     title: "Sistema de Gestión Veterinaria",
     description:
       "Aplicación de consola con C++ y Rlutil. Gestión de pacientes, veterinarios, mascotas, y reportes.",
     img: "img/projects/gestion-veterinaria.png",
+    github:"https://github.com/oscar-principi/Labo-II.git",
   },
   {
     title: "Muebleria",
     description:
       "Sitio web para muebleria en HTML y CSS, responsiva con vista de productos y contactos.",
     img: "img/projects/muebleria.png",
+    github:"https://github.com/oscar-principi/Muebles-Finochio.git",
   },
 ];
 
@@ -75,9 +81,18 @@ const projects = [
                         alt={project.title}
                         className="flip-card-front absolute w-full h-full rounded-md object-contain backface-hidden"
                       />
-                      <div className="flip-card-back absolute w-full h-full bg-zinc-700 text-white rounded-md flex items-center justify-center p-4 rotate-y-180 backface-hidden text-center">
-                        <p>{project.description}</p>
+                      <div className="flip-card-back absolute w-full h-full bg-zinc-700 text-white rounded-md flex flex-col items-center justify-center p-4 rotate-y-180 backface-hidden text-center">
+                        <p className="mb-4">{project.description}</p>
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm text-blue-300 underline hover:text-blue-400 transition"
+                        >
+                          Ver en GitHub
+                        </a>
                       </div>
+
                     </div>
                   </div>
                 </div>
