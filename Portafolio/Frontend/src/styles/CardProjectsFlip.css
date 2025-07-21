@@ -30,7 +30,7 @@
 }
 
 .flip-card-front {
-  background-color: #f1f5f9; 
+  background-color: white; 
   color: #27272a; 
 }
 
@@ -38,5 +38,5 @@
   background-color: #3f3f46; 
   color: white;
   transform: rotateY(180deg);
-  padding: 1em;
+    padding: 1em;
 }

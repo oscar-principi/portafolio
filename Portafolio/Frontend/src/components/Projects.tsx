@@ -34,7 +34,7 @@ const projects = [
     description:
       "Aplicación de consola con C++ y Rlutil. Gestión de pacientes, veterinarios, mascotas, y reportes.",
     img: "img/projects/gestion-veterinaria.png",
-    github:"https://github.com/oscar-principi/Labo-II.git",
+    github:"https://github.com/oscar-principi/Labo-II.git"
   },
   {
     title: "Muebleria",
@@ -68,10 +68,10 @@ const projects = [
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="min-w-full flex flex-col items-center justify-center p-2"
+                className="min-w-full flex flex-col items-center justify-center p-4"
               >
-                <div className="bg-white pt-7 rounded-xl shadow-md w-full max-w-3xl text-center">
-                  <h3 className="text-2xl font-semibold text-zinc-900 mb-3">
+                <div className="bg-white pt-14 rounded-xl shadow-md w-full max-w-3xl text-center">
+                  <h3 className="text-2xl font-semibold text-zinc-900 mb-5">
                     {project.title}
                   </h3>
                   <div className="flip-card mx-auto mb-60 rounded-md max-h-45 w-10 h-10 perspective">

@@ -43,7 +43,7 @@ export default function Tech() {
 
   return (
     <section id="tech" className="pt-[68px] -mt-[80px] bg-gray-50 text-zinc-700 w-full">
-      <div className="max-w-2xl mx-auto px-2">
+      <div className="max-w-2xl mx-auto px-2 pb-7">
         <h2 className="font-semibold mb-8 text-zinc-900 ">
         </h2>
         <ul
