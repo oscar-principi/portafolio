@@ -40,3 +40,7 @@
   transform: rotateY(180deg);
     padding: 1em;
 }
+
+.auto-scale-text {
+  font-size: clamp(0.65rem, 2.5vw, 1rem);
+}

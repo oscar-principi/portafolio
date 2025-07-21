@@ -83,7 +83,9 @@ const projects = [
                       />
                      <div className="flip-card-back absolute w-full h-full bg-zinc-700 text-white rounded-md flex flex-col items-center justify-center px-2 py-4 rotate-y-180 backface-hidden text-center overflow-hidden">
                         <div className="max-h-[260px] overflow-y-auto text-sm md:text-base break-words space-y-4">
-                          <p>{project.description}</p>
+                          <p className="mb-4 text-xs sm:text-sm md:text-base break-words text-wrap auto-scale-text">
+                            {project.description}
+                          </p>
                           <a
                             href={project.github}
                             target="_blank"
