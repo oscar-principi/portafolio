@@ -81,17 +81,20 @@ const projects = [
                         alt={project.title}
                         className="flip-card-front absolute w-full h-full rounded-md object-contain backface-hidden"
                       />
-                      <div className="flip-card-back absolute w-full h-full bg-zinc-700 text-white rounded-md flex flex-col items-center justify-center p-4 rotate-y-180 backface-hidden text-center">
-                        <p className="mb-4">{project.description}</p>
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-sm text-blue-300 underline hover:text-blue-400 transition"
-                        >
-                          Ver en GitHub
-                        </a>
+                     <div className="flip-card-back absolute w-full h-full bg-zinc-700 text-white rounded-md flex flex-col items-center justify-center px-2 py-4 rotate-y-180 backface-hidden text-center overflow-hidden">
+                        <div className="max-h-[260px] overflow-y-auto text-sm md:text-base break-words space-y-4">
+                          <p>{project.description}</p>
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm text-blue-300 underline hover:text-blue-400 transition break-words"
+                          >
+                            Ver en GitHub
+                          </a>
+                        </div>
                       </div>
+
 
                     </div>
                   </div>
