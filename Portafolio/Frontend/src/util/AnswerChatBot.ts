@@ -22,7 +22,7 @@ export const botResponses: BotResponse[] = [
 },
   {
     keywords: ["formacion", "estudios", "tecnicatura", "educacion", "Formacion", "Formación"],
-    answer: "Estoy terminando la Tecnicatura en Programacion en la UTN. Aprendí sobre programación fullstack en aplicaciones web y de escritorio.",
+    answer: "Estoy terminando la Tecnicatura en Programación en la UTN. Aprendí sobre programación fullstack en aplicaciones web y de escritorio.",
   },
   {
     keywords: ["tecnologias", "stack", "lenguajes", "herramientas", "Tecnologías", "Tecnologias" ],
