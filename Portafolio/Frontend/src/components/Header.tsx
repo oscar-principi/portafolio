@@ -6,7 +6,7 @@ export default function Header() {
           <h1 className="text-zinc-800 text-4xl font-bold leading-tight">
             Oscar Dev{" "}
             <span className="text-zinc-600 text-sm font-sans align-middle">
-              Fullstack Jr.
+              Fullstack.
             </span>
           </h1>
         </div>
