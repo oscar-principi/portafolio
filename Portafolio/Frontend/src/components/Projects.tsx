@@ -1,6 +1,13 @@
 import { useState } from "react";
 
 const projects = [
+    {
+    title: "Eccomerce B2C",
+    description:
+      "Aplicación Fulltack con .NET y Blazor/Mudblazor, Identity + JWT + Cookie, Entity. Despliegue: Azure + AzureDevops. Seguridad: OWASP ZAP. Calidad: Sonarqube.",
+    img: "img/projects/ecommerceb2c.png",
+    github:"https://www.linkedin.com/posts/oscar-principi_hola-buenas-quiero-presentar-activity-7381465874618036225-MK1e?utm_source=share&utm_medium=member_desktop&rcm=ACoAADus_OQB0mHRUsb3abSzbHFpTuo5j0FbxsQ",
+  },
   {
     title: "Portafolio Personal",
     description:
@@ -92,7 +99,7 @@ const projects = [
                             rel="noopener noreferrer"
                             className="text-sm text-blue-300 underline hover:text-blue-400 transition break-words"
                           >
-                            Ver en GitHub
+                            Ver
                           </a>
                         </div>
                       </div>
