@@ -1,12 +1,13 @@
 import { useState } from "react";
 
 const projects = [
-    {
+  {
     title: "Eccomerce B2C",
     description:
-      "Aplicación Fulltack con .NET y Blazor/Mudblazor, Identity + JWT + Cookie, Entity. Despliegue: Azure + AzureDevops. Seguridad: OWASP ZAP. Calidad: Sonarqube.",
+      "Aplicación Fullstack con .NET y Blazor/Mudblazor, Identity + JWT + Cookie, Entity. Despliegue: Azure + AzureDevops. Seguridad: OWASP ZAP. Calidad: Sonarqube.",
     img: "img/projects/ecommerceb2c.png",
-    github:"https://www.linkedin.com/posts/oscar-principi_hola-buenas-quiero-presentar-activity-7381465874618036225-MK1e?utm_source=share&utm_medium=member_desktop&rcm=ACoAADus_OQB0mHRUsb3abSzbHFpTuo5j0FbxsQ",
+    github:
+      "https://www.linkedin.com/posts/oscar-principi_hola-buenas-quiero-presentar-activity-7381465874618036225-MK1e?utm_source=share&utm_medium=member_desktop&rcm=ACoAADus_OQB0mHRUsb3abSzbHFpTuo5j0FbxsQ",
   },
   {
     title: "Portafolio Personal",
@@ -18,159 +19,155 @@ const projects = [
   {
     title: "Home Banking",
     description:
-      "Aplicación Fulltack con Java, JSP, Servlets, JDBC, Tomcat y Bootstrap. Gestión de clientes, cuentas, transferencias y de administradores, seguridad RBAC.",
+      "Aplicación Fullstack con Java, JSP, Servlets, JDBC, Tomcat y Bootstrap. Gestión de clientes, cuentas, transferencias y de administradores, seguridad RBAC.",
     img: "img/projects/home-banking.png",
-    github:"https://github.com/user52689/LAB-IV.git",
-  },
-  {
-    title: "E-commerce",
-    description:
-      "Ecommerce (en construcción) con arquitectura de microservicios en .NET Core, API´s + Ocelot, JWT, Identity, Entity.",
-    img: "img/projects/ecommerce.png",
-    github:"https://github.com/oscar-principi/EcommerceExpress.git",
+    github: "https://github.com/user52689/LAB-IV.git",
   },
   {
     title: "Sistema de Gestión Médica",
     description:
-      "Aplicacion Fullstack con .NET Framework. Gestion de pacientes y administradores, con reportes y seguridad RBAC.",
+      "Aplicación Fullstack con .NET Framework. Gestión de pacientes y administradores, con reportes y seguridad RBAC.",
     img: "img/projects/gestion-medica.png",
-    github:"https://github.com/user52689/PROG-III.git",
+    github: "https://github.com/user52689/PROG-III.git",
   },
   {
     title: "Sistema de Gestión Veterinaria",
     description:
-      "Aplicación de consola con C++ y Rlutil. Gestión de pacientes, veterinarios, mascotas, y reportes.",
+      "Aplicación de consola con C++ y Rlutil. Gestión de pacientes, veterinarios, mascotas y reportes.",
     img: "img/projects/gestion-veterinaria.png",
-    github:"https://github.com/oscar-principi/Labo-II.git"
+    github: "https://github.com/oscar-principi/Labo-II.git",
   },
   {
     title: "Muebleria",
     description:
       "Sitio web para muebleria en HTML y CSS, responsiva con vista de productos y contactos.",
     img: "img/projects/muebleria.png",
-    github:"https://github.com/oscar-principi/Muebles-Finochio.git",
+    github: "https://github.com/oscar-principi/Muebles-Finochio.git",
   },
 ];
 
+function Projects() {
+  const [current, setCurrent] = useState(0);
+  // const total = projects.length;
 
+  // const next = () => setCurrent((current + 1) % total);
+  // const prev = () => setCurrent((current - 1 + total) % total);
 
-  function Projects() {
-    const [current, setCurrent] = useState(0);
-    const total = projects.length;
-  
-    const next = () => setCurrent((current + 1) % total);
-    const prev = () => setCurrent((current - 1 + total) % total);
-  
-    return (
-      <section
-        id="projects"
-        className="flex flex-col items-center justify-center bg-zinc-100 text-zinc-700 px-1 py-20 w-full"
-      >
-  
-        <div className="relative w-full max-w-3xl overflow-hidden">
-          <div
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(-${current * 100}%)` }}
-          >
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className="min-w-full flex flex-col items-center justify-center p-4"
-              >
-                <div className="bg-white pt-14 rounded-xl shadow-md w-full max-w-3xl text-center">
-                  <h3 className="text-2xl font-semibold text-zinc-900 mb-5">
-                    {project.title}
-                  </h3>
-                  <div className="flip-card mx-auto mb-60 rounded-md max-h-45 w-10 h-10 perspective">
-                    <div className="flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-preserve-3d">
-                      <img
-                        src={project.img}
-                        alt={project.title}
-                        className="flip-card-front absolute w-full h-full rounded-md object-contain backface-hidden"
-                      />
-                     <div className="flip-card-back absolute w-full h-full bg-zinc-700 text-white rounded-md flex flex-col items-center justify-center px-2 py-4 rotate-y-180 backface-hidden text-center overflow-hidden">
-                        <div className="max-h-[260px] overflow-y-auto text-sm md:text-base break-words space-y-4">
-                          <p className="mb-4 text-xs sm:text-sm md:text-base break-words text-wrap auto-scale-text">
-                            {project.description}
-                          </p>
-                          <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm text-blue-300 underline hover:text-blue-400 transition break-words"
-                          >
-                            Ver
-                          </a>
-                        </div>
+  return (
+    <section
+      id="projects"
+      className="flex flex-col items-center justify-start bg-black text-red-500 px-4 pt-18 pb-4 w-full flex-1 min-h-0 overflow-hidden"
+    >
+
+      <div className="relative w-full max-w-5xl overflow-x-hidden overflow-y-auto p-5 flex-1">
+        <div
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${current * 100}%)` }}
+        >
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="min-w-full flex flex-col items-center justify-center p-4"
+            >
+              <div className="bg-black pt-10 rounded-xl shadow-[0_0_20px_rgba(255,0,0,0.9)] w-full max-w-3xl text-center border-1  border-red-600 rounded-lg hover:shadow-[0_0_30px_rgba(255,0,0,1)] transition-all">
+                <h3
+                  className="text-2xl font-semibold text-red-500
+                             drop-shadow-[0_0_10px_rgba(255,0,0,0.9)]
+                             drop-shadow-[0_0_20px_rgba(255,0,0,0.7)]
+                             drop-shadow-[0_0_30px_rgba(255,0,0,0.5)]
+                             mb-5"
+                >
+                  {project.title}
+                </h3>
+                <div className="flip-card mx-auto mb-60 rounded-md max-h-45 w-10 h-10 perspective">
+                  <div className="flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-preserve-3d border-1 border-red-600 rounded-lg">
+                    <img
+                      src={project.img}
+                      alt={project.title}
+                      className="flip-card-front absolute w-full h-full rounded-md object-contain backface-hidden drop-shadow-[0_0_15px_rgba(255,0,0,0.9)] hover:drop-shadow-[0_0_25px_rgba(255,0,0,1)] transition-all"
+                    />
+                    <div className="flip-card-back absolute w-full h-full bg-black text-red-400 rounded-md flex flex-col items-center justify-center px-2 py-4 rotate-y-180 backface-hidden text-center overflow-hidden drop-shadow-[0_0_12px_rgba(255,0,0,0.8)] hover:drop-shadow-[0_0_20px_rgba(255,0,0,1)] transition-all">
+                      <div className="max-h-[260px] overflow-y-auto text-sm md:text-base break-words space-y-4">
+                        <p className="mb-4 text-xs sm:text-sm md:text-base">
+                          {project.description}
+                        </p>
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm text-red-400 underline hover:text-red-500 hover:drop-shadow-[0_0_15px_rgba(255,0,0,1)] transition-all"
+                        >
+                          Ver
+                        </a>
                       </div>
-
-
                     </div>
                   </div>
                 </div>
               </div>
-            ))}
-  
-          </div>
-  
-          {/* Flechas */}
-          <button
-            onClick={prev}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 p-2 rounded-full bg-zinc-200 bg-opacity-80 hover:bg-zinc-600 hover:text-white transition"
-            aria-label="Anterior"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-6 h-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-  
-          <button
-            onClick={next}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 p-2 rounded-full bg-zinc-200 bg-opacity-80 hover:bg-zinc-600 hover:text-white transition"
-            aria-label="Siguiente"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-6 h-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
-  
-          <div className="flex mt-6 gap-3 justify-center">
-            {projects.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrent(index)}
-                className={`w-4 h-4 rounded-full ${
-                  current === index ? "bg-zinc-600" : "bg-zinc-400"
-                } transition`}
-                aria-label={`Proyecto ${index + 1}`}
-              />
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
-      </section>
-    );
-  }
-  
-  export default Projects;
+
+        {/* Flechas
+        <button
+          onClick={prev}
+          className="absolute left-8 top-1/2 transform -translate-y-1/2 p-2 rounded-full 
+                    bg-red-800/40 hover:bg-red-600/80 text-white 
+                    border-1 border-red-600
+                    drop-shadow-[0_0_8px_rgba(255,0,0,0.8)] hover:drop-shadow-[0_0_15px_rgba(255,0,0,1)]
+                    transition-all"
+          aria-label="Anterior"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-6 h-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        <button
+          onClick={next}
+          className="absolute right-8 top-1/2 transform -translate-y-1/2 p-2 rounded-full 
+                    bg-red-800/40 hover:bg-red-600/80 text-white 
+                    border-1 border-red-600
+                    drop-shadow-[0_0_8px_rgba(255,0,0,0.8)] hover:drop-shadow-[0_0_15px_rgba(255,0,0,1)]
+                    transition-all"
+          aria-label="Siguiente"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-6 h-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button> */}
+
+
+        {/* Indicadores */}
+        <div className="flex mt-6 gap-3 justify-center">
+          {projects.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrent(index)}
+              className={`w-4 h-4 rounded-full ${
+                current === index
+                  ? "bg-red-600 drop-shadow-[0_0_12px_rgba(255,0,0,0.9)]"
+                  : "bg-red-800/60"
+              } transition-all`}
+              aria-label={`Proyecto ${index + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default Projects;

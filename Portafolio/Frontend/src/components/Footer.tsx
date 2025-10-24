@@ -1,19 +1,33 @@
 import Contact from "./Contact";
 
-export default function Footer() {
+interface FooterProps {
+  onToggleTerminal?: () => void;
+}
+
+export default function Footer({ onToggleTerminal }: FooterProps) {
   return (
-    <footer className="fixed bottom-0 left-0 w-full bg-zinc-100 py-2 border-t border-zinc-300 z-40">
-      <div className="max-w-5xl mx-auto flex flex-col items-center gap-2 text-sm text-zinc-600 px-4">
+    <footer
+      className="bg-black border-t-2 border-red-600
+                 shadow-[0_-4px_12px_rgba(255,0,0,0.8),0_-4px_24px_rgba(255,0,0,0.6)]
+                 transition-all hover:shadow-[0_-4px_16px_rgba(255,0,0,1),0_-4px_28px_rgba(255,0,0,0.8)]
+                 z-40 p-1 mt-auto"
+    >
+      <div className="max-w-5xl mx-auto flex flex-col items-center gap-1 text-sm text-red-500">
         <div className="flex flex-col md:flex-row md:items-center md:justify-center md:gap-4 w-full">
-          <p className="text-center md:text-left w-full md:w-auto">
+          
+          <p className="text-center md:text-left w-full md:w-auto
+                    text-red-600
+                    drop-shadow-[0_0_10px_rgba(255,0,0,0.9)]
+                    hover:drop-shadow-[0_0_18px_rgba(255,0,0,1)]">
             © {new Date().getFullYear()} Oscar Dev - Todos los derechos reservados.
           </p>
+
           <div className="flex justify-center gap-4 mt-2 md:mt-0 w-full md:w-auto">
-            <Contact />
+            <Contact onToggleTerminal={onToggleTerminal} />
           </div>
+
         </div>
       </div>
     </footer>
   );
 }
-
