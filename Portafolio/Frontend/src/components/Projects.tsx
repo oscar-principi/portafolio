@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const projects = [
   {
@@ -48,18 +48,34 @@ const projects = [
 
 function Projects() {
   const [current, setCurrent] = useState(0);
-  // const total = projects.length;
+  const total = projects.length;
+  const intervalRef = useRef(null);
 
-  // const next = () => setCurrent((current + 1) % total);
-  // const prev = () => setCurrent((current - 1 + total) % total);
+  const startAutoSlide = () => {
+    intervalRef.current = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % total);
+    }, 5000);
+  };
+
+  const stopAutoSlide = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+  };
+
+  useEffect(() => {
+    startAutoSlide();
+    return () => stopAutoSlide();
+  }, [total]);
 
   return (
     <section
       id="projects"
       className="flex flex-col items-center justify-start bg-black text-red-500 px-4 pt-18 pb-4 w-full flex-1 min-h-0 overflow-hidden"
     >
-
-      <div className="relative w-full max-w-5xl overflow-x-hidden overflow-y-auto p-5 flex-1">
+      <div
+        className="relative w-full max-w-5xl overflow-x-hidden overflow-y-auto p-5 flex-1"
+        onMouseEnter={stopAutoSlide}
+        onMouseLeave={startAutoSlide}
+      >
         <div
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${current * 100}%)` }}
@@ -69,16 +85,11 @@ function Projects() {
               key={index}
               className="min-w-full flex flex-col items-center justify-center p-4"
             >
-              <div className="bg-black pt-10 rounded-xl shadow-[0_0_20px_rgba(255,0,0,0.9)] w-full max-w-3xl text-center border-1  border-red-600 rounded-lg hover:shadow-[0_0_30px_rgba(255,0,0,1)] transition-all">
-                <h3
-                  className="text-2xl font-semibold text-red-500
-                             drop-shadow-[0_0_10px_rgba(255,0,0,0.9)]
-                             drop-shadow-[0_0_20px_rgba(255,0,0,0.7)]
-                             drop-shadow-[0_0_30px_rgba(255,0,0,0.5)]
-                             mb-5"
-                >
+              <div className="bg-black pt-10 rounded-xl shadow-[0_0_20px_rgba(255,0,0,0.9)] w-full max-w-3xl text-center border-1 border-red-600 hover:shadow-[0_0_30px_rgba(255,0,0,1)] transition-all">
+                <h3 className="text-2xl font-semibold text-red-500 drop-shadow-[0_0_10px_rgba(255,0,0,0.9)] drop-shadow-[0_0_20px_rgba(255,0,0,0.7)] drop-shadow-[0_0_30px_rgba(255,0,0,0.5)] mb-5">
                   {project.title}
                 </h3>
+
                 <div className="flip-card mx-auto mb-60 rounded-md max-h-45 w-10 h-10 perspective">
                   <div className="flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-preserve-3d border-1 border-red-600 rounded-lg">
                     <img
@@ -107,48 +118,6 @@ function Projects() {
             </div>
           ))}
         </div>
-
-        {/* Flechas
-        <button
-          onClick={prev}
-          className="absolute left-8 top-1/2 transform -translate-y-1/2 p-2 rounded-full 
-                    bg-red-800/40 hover:bg-red-600/80 text-white 
-                    border-1 border-red-600
-                    drop-shadow-[0_0_8px_rgba(255,0,0,0.8)] hover:drop-shadow-[0_0_15px_rgba(255,0,0,1)]
-                    transition-all"
-          aria-label="Anterior"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-6 h-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-
-        <button
-          onClick={next}
-          className="absolute right-8 top-1/2 transform -translate-y-1/2 p-2 rounded-full 
-                    bg-red-800/40 hover:bg-red-600/80 text-white 
-                    border-1 border-red-600
-                    drop-shadow-[0_0_8px_rgba(255,0,0,0.8)] hover:drop-shadow-[0_0_15px_rgba(255,0,0,1)]
-                    transition-all"
-          aria-label="Siguiente"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-6 h-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </button> */}
-
 
         {/* Indicadores */}
         <div className="flex mt-6 gap-3 justify-center">

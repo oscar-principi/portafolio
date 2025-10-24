@@ -61,9 +61,10 @@
   pointer-events: none; 
   background: #ff0000;
   box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
-  transition: transform 0.05s ease-out;
   z-index: 9999;
+  /* Quitar transición */
 }
+
 /* Oculta el cursor del sistema en toda la página */
 body, * {
   cursor: none;
