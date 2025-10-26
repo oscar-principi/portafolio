@@ -19,7 +19,7 @@ const asciiArt = `
  | |  | / __| |/ / | | | | |  | |/ _ \\ \\ / /
  | |__| \__ \ | <| |_| | | | |_ / | __/ \\ V / 
   \\____/|___/_|\_\\__,_  | |_____/ \\___| \\_/  
-                   __/ |                    
+                   __/ |      Osky Dev              
                   |___/                     
 `;
 
@@ -77,10 +77,11 @@ const asciiArt = `
       <div className="flex-shrink-0 p-3 border-b border-transparent bg-black relative
                       shadow-[0_4px_10px_rgba(255,0,0,0.8),0_4px_20px_rgba(255,0,0,0.6)]
                       transition-all hover:shadow-[0_4px_12px_rgba(255,0,0,1),0_4px_24px_rgba(255,0,0,0.8)]">
-        <span className="text-red-500">terminal@oscar</span>
+        <span className="whitespace-pre-wrap break-words font-mono text-xs sm:text-sm md:text-base lg:text-lg
+               text-red-600 drop-shadow-[0_0_10px_rgba(255,0,0,0.9)]">terminal@oscar</span>
         <button
           onClick={() => setIsOpen(false)}
-          className="absolute top-2 right-2 text-red-500 hover:text-red-400 font-bold text-lg transition"
+          className="absolute top-2 right-2 text-red-600 hover:text-red-400 font-bold text-lg transition"
           title="Cerrar Terminal"
         >
           ✕
@@ -92,7 +93,8 @@ const asciiArt = `
         {messages.map((msg, idx) => (
           <pre
             key={idx}
-            className="whitespace-pre-wrap break-words font-mono text-xs sm:text-sm md:text-base lg:text-lg"
+            className="whitespace-pre-wrap break-words font-mono text-xs sm:text-sm md:text-base lg:text-lg
+               text-red-600 drop-shadow-[0_0_10px_rgba(255,0,0,0.9)]"
           >
             {msg}
           </pre>
@@ -103,9 +105,10 @@ const asciiArt = `
 
       {/* Input */}
       <div className="flex-shrink-0 flex items-center p-3 bg-black">
-        <span className="text-red-500 mr-2">terminal@oscar:</span>
+        <span className="whitespace-pre-wrap break-words font-mono text-xs sm:text-sm md:text-base lg:text-lg
+               text-red-600 drop-shadow-[0_0_10px_rgba(255,0,0,0.9)]">terminal@oscar:</span>
         <input
-          className="flex-1 bg-black text-red-500 border-none outline-none font-poppins"
+          className="flex-1 bg-black text-red-600 border-none outline-none font-poppins"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}

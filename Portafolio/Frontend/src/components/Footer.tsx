@@ -15,10 +15,8 @@ export default function Footer({ onToggleTerminal }: FooterProps) {
       <div className="max-w-5xl mx-auto flex flex-col items-center gap-1 text-sm text-red-500">
         <div className="flex flex-col md:flex-row md:items-center md:justify-center md:gap-4 w-full">
           
-          <p className="text-center md:text-left w-full md:w-auto
-                    text-red-600
-                    drop-shadow-[0_0_10px_rgba(255,0,0,0.9)]
-                    hover:drop-shadow-[0_0_18px_rgba(255,0,0,1)]">
+          <p className="text-center whitespace-pre-wrap break-words font-mono text-xs sm:text-sm md:text-base lg:text-lg
+               text-red-600 drop-shadow-[0_0_10px_rgba(255,0,0,0.9)]">
             © {new Date().getFullYear()} Oscar Dev - Todos los derechos reservados.
           </p>
 

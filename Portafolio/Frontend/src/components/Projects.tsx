@@ -38,7 +38,7 @@ const projects = [
     github: "https://github.com/oscar-principi/Labo-II.git",
   },
   {
-    title: "Muebleria",
+    title: "Mueblería",
     description:
       "Sitio web para muebleria en HTML y CSS, responsiva con vista de productos y contactos.",
     img: "img/projects/muebleria.png",
@@ -109,7 +109,7 @@ function Projects() {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-sm text-red-400 underline hover:text-red-500 hover:drop-shadow-[0_0_15px_rgba(255,0,0,1)] transition-all"
+                          className="text-sm text-red-600 underline hover:text-red-600 hover:drop-shadow-[0_0_15px_rgba(255,0,0,1)] transition-all"
                         >
                           Ver
                         </a>
