@@ -65,8 +65,106 @@
   /* Quitar transición */
 }
 
-/* Oculta el cursor del sistema en toda la página */
 body, * {
   cursor: none;
+  /* background-image: url('../public/img/fondo.png'); 
+  background-size: cover; 
+  background-position: center;
+  background-attachment: fixed; 
+  background-repeat: no-repeat; */
 }
+
+
+
+
+/* 💥 Estilo Oscar Dev neón con un solo rojo */
+
+/* Oscilación del brillo */
+@keyframes neonPulse {
+  0% {
+    text-shadow:
+      0 0 10px #ff0000,
+      0 0 20px #ff0000;
+  }
+  50% {
+    text-shadow:
+      0 0 35px rgba(255, 0, 0, 1),
+      0 0 65px rgba(255, 0, 0, 1);
+  }
+  100% {
+    text-shadow:
+      0 0 10px #ff0000,
+      0 0 20px #ff0000;
+  }
+}
+
+/* Parpadeos con fallos */
+@keyframes neonFlicker {
+  0%, 18%, 22%, 25%, 53%, 56%, 100% {
+    opacity: 1;
+  }
+  19%, 21%, 24%, 54% {
+    opacity: 0.85;
+  }
+  55% {
+    opacity: 0.6;
+  }
+}
+
+/* Eliminado hue-rotate — mantiene el rojo uniforme */
+@keyframes neonBurn {
+  0% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.2);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
+
+.neon-title {
+  position: relative;
+  animation:
+    neonPulse 2.8s infinite ease-in-out,
+    neonFlicker 4s infinite,
+    neonBurn 6s infinite;
+}
+
+/* Glitch suave — todo rojo */
+.neon-title::after {
+  content: "Oscar Dev";
+  position: absolute;
+  inset: 0;
+  text-shadow: 0 0 25px rgba(255, 0, 0, 1);
+  opacity: 0;
+  animation: glitch 3.5s infinite;
+}
+
+@keyframes glitch {
+  0%, 90% {
+    opacity: 0;
+    transform: translate(0);
+  }
+  92% {
+    opacity: 0.45;
+    transform: translate(-2px, -1px);
+  }
+  94% {
+    opacity: 0.25;
+    transform: translate(2px, 1px);
+  }
+  96% {
+    opacity: 0.4;
+    transform: translate(-1px, 1px);
+  }
+  98% {
+    opacity: 0;
+    transform: translate(0);
+  }
+}
+
+
+
 

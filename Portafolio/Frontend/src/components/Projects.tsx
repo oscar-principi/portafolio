@@ -46,19 +46,21 @@ const projects = [
   },
 ];
 
+
+
 function Projects() {
   const [current, setCurrent] = useState(0);
   const total = projects.length;
-  const intervalRef = useRef(null);
+  const intervalRef = useRef<number | null>(null);
 
   const startAutoSlide = () => {
-    intervalRef.current = setInterval(() => {
+    intervalRef.current = window.setInterval(() => {
       setCurrent((prev) => (prev + 1) % total);
     }, 5000);
   };
 
   const stopAutoSlide = () => {
-    if (intervalRef.current) clearInterval(intervalRef.current);
+    if (intervalRef.current !== null) clearInterval(intervalRef.current);
   };
 
   useEffect(() => {
@@ -69,7 +71,7 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="flex flex-col items-center justify-start bg-black text-red-500 px-4 pt-18 pb-4 w-full flex-1 min-h-0 overflow-hidden"
+      className="flex flex-col items-center justify-start bg-black text-red-600 px-4 pt-18 pb-4 w-full flex-1 min-h-0 overflow-hidden"
     >
       <div
         className="relative w-full max-w-5xl overflow-x-hidden overflow-y-auto p-5 flex-1"
@@ -85,23 +87,24 @@ function Projects() {
               key={index}
               className="min-w-full flex flex-col items-center justify-center p-4"
             >
-              <div className="bg-black pt-10 rounded-xl shadow-[0_0_20px_rgba(255,0,0,0.9)] w-full max-w-3xl text-center border-1 border-red-600 hover:shadow-[0_0_30px_rgba(255,0,0,1)] transition-all">
-                <h3 className="text-2xl font-semibold text-red-500 drop-shadow-[0_0_10px_rgba(255,0,0,0.9)] drop-shadow-[0_0_20px_rgba(255,0,0,0.7)] drop-shadow-[0_0_30px_rgba(255,0,0,0.5)] mb-5">
+              
+              
+                <h3 className="text-2xl font-semibold text-red-600 drop-shadow-[0_0_10px_rgba(255,0,0,0.9)] drop-shadow-[0_0_20px_rgba(255,0,0,0.7)] drop-shadow-[0_0_30px_rgba(255,0,0,0.5)] my-5 text-center px-4">
                   {project.title}
                 </h3>
 
-                <div className="flip-card mx-auto mb-60 rounded-md max-h-45 w-10 h-10 perspective">
-                  <div className="flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-preserve-3d border-1 border-red-600 rounded-lg">
+                {/* Flip card */}
+                <div className="flip-card w-full aspect-[16/9] sm:aspect-[16/9] md:aspect-[16/9] lg:aspect-[16/9] rounded-md perspective mb-5
+                                max-h-[300px] sm:max-h-[400px] md:max-h-[450px] lg:max-h-[500px]">
+                  <div className="flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-preserve-3d rounded-lg">
                     <img
                       src={project.img}
                       alt={project.title}
-                      className="flip-card-front absolute w-full h-full rounded-md object-contain backface-hidden drop-shadow-[0_0_15px_rgba(255,0,0,0.9)] hover:drop-shadow-[0_0_25px_rgba(255,0,0,1)] transition-all"
+                      className="flip-card-front absolute inset-0 w-full h-full rounded-md object-cover backface-hidden drop-shadow-[0_0_15px_rgba(255,0,0,0.9)] hover:drop-shadow-[0_0_25px_rgba(255,0,0,1)] transition-all"
                     />
-                    <div className="flip-card-back absolute w-full h-full bg-black text-red-400 rounded-md flex flex-col items-center justify-center px-2 py-4 rotate-y-180 backface-hidden text-center overflow-hidden drop-shadow-[0_0_12px_rgba(255,0,0,0.8)] hover:drop-shadow-[0_0_20px_rgba(255,0,0,1)] transition-all">
-                      <div className="max-h-[260px] overflow-y-auto text-sm md:text-base break-words space-y-4">
-                        <p className="mb-4 text-xs sm:text-sm md:text-base">
-                          {project.description}
-                        </p>
+                    <div className="flip-card-back absolute inset-0 bg-black text-red-400 rounded-md flex flex-col items-center justify-center px-4 py-4 rotate-y-180 backface-hidden text-center overflow-hidden drop-shadow-[0_0_12px_rgba(255,0,0,0.8)] hover:drop-shadow-[0_0_20px_rgba(255,0,0,1)] transition-all">
+                      <div className="overflow-y-auto max-h-[260px] text-sm md:text-base space-y-4 break-words">
+                        <p>{project.description}</p>
                         <a
                           href={project.github}
                           target="_blank"
@@ -114,8 +117,8 @@ function Projects() {
                     </div>
                   </div>
                 </div>
+
               </div>
-            </div>
           ))}
         </div>
 

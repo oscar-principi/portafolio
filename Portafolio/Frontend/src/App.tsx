@@ -14,29 +14,29 @@ function App() {
   const [messages, setMessages] = useState<string[]>([]);
 
   return (
-    <div className="font-sans bg-zinc-100 text-gray-200 min-h-screen flex flex-col">
+    <div className="font-sans text-gray-200 min-h-screen flex flex-col relative">
       <CursorNeon />
       <Header />
-
       <main className="flex-1 flex flex-col relative min-h-0">
         {!terminalOpen && <Projects />}
-
-        {terminalOpen && (
-          <div className="absolute inset-0 bg-black z-10 flex flex-col">
-
-            <Terminal 
-            isOpen={terminalOpen} 
-            setIsOpen={setTerminalOpen} 
-            messages={messages} 
-            setMessages={setMessages} 
-            />
-          </div>
-        )}
       </main>
 
       <Footer onToggleTerminal={() => setTerminalOpen(!terminalOpen)} />
+
+      {/* Terminal flotante encima de todo */}
+      {terminalOpen && (
+        <div className="fixed inset-0 z-50 bg-black flex flex-col">
+          <Terminal
+            isOpen={terminalOpen}
+            setIsOpen={setTerminalOpen}
+            messages={messages}
+            setMessages={setMessages}
+          />
+        </div>
+      )}
     </div>
   );
 }
+
 
 export default App;
