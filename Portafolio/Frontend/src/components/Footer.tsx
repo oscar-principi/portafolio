@@ -17,7 +17,7 @@ export default function Footer({ onToggleTerminal }: FooterProps) {
           
           <p className="text-center whitespace-pre-wrap break-words font-mono text-xs sm:text-sm md:text-base lg:text-lg
                text-red-600 drop-shadow-[0_0_10px_rgba(255,0,0,0.9)]">
-            © {new Date().getFullYear()} Oscar Dev - Todos los derechos reservados.
+            © {new Date().getFullYear()} Oscar Dev.
           </p>
 
           <div className="flex justify-center gap-4 mt-2 md:mt-0 w-full md:w-auto">

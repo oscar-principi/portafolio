@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import NeonTrail from "../styles/NeonTrail";
 
 const projects = [
   {
@@ -73,6 +74,9 @@ function Projects() {
       id="projects"
       className="flex flex-col items-center justify-start bg-black text-red-600 px-4 pt-18 pb-4 w-full flex-1 min-h-0 overflow-hidden"
     >
+
+      <NeonTrail />
+
       <div
         className="relative w-full max-w-5xl overflow-x-hidden overflow-y-auto p-5 flex-1"
         onMouseEnter={stopAutoSlide}

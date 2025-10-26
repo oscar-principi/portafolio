@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { getBotAnswer } from "../util/AnswerChatBot";
+import NeonTrail from "../styles/NeonTrail";
 
 interface TerminalProps {
   isOpen: boolean;
@@ -71,7 +72,7 @@ const asciiArt = `
   if (!isOpen) return null;
 
   return (
-    <div className="flex flex-col h-screen bg-black text-red-500 font-poppins drop-shadow-[0_0_12px_rgba(255,0,0,0.9)]">
+    <div className="flex flex-col h-screen bg-black text-red-600 font-poppins drop-shadow-[0_0_12px_rgba(255,0,0,0.9)]">
 
       {/* Header */}
       <div className="flex-shrink-0 p-3 border-b border-transparent bg-black relative
@@ -87,14 +88,14 @@ const asciiArt = `
           ✕
         </button>
       </div>
-
       {/* Mensajes con scroll */}
       <div className="flex-1 overflow-y-auto overflow-x-auto px-4 py-2 space-y-2 chat-terminal">
+        <NeonTrail />
         {messages.map((msg, idx) => (
           <pre
-            key={idx}
-            className="whitespace-pre-wrap break-words font-mono text-xs sm:text-sm md:text-base lg:text-lg
-               text-red-600 drop-shadow-[0_0_10px_rgba(255,0,0,0.9)]"
+          key={idx}
+          className="whitespace-pre-wrap break-words font-mono text-xs sm:text-sm md:text-base lg:text-lg
+          text-red-600 drop-shadow-[0_0_10px_rgba(255,0,0,0.9)]"
           >
             {msg}
           </pre>
